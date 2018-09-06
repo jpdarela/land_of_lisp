@@ -61,3 +61,50 @@
 ;;          \|/  ||        ||
 ;;  \|/__________________________
 
+
+
+#|| CONDITIONALS ||#
+
+(defun test-if (arg)
+  "if form"
+  (if arg                ;; condition
+      'i-am-true       ;; Argument 1  eval with Truth
+      'i-am-false))    ;; Argument 2  eval with nil
+
+#|| NIL and recursion ||#
+
+(defun my-length (list)
+  "LISP is a list eater"
+  (if list
+      (1+ (my-length (cdr list)))
+      0))
+
+(defun conditionals ()
+
+  (if (= ( + 2 4) 7)
+      'equal
+      'different)
+  
+  (if (= ( + 2 4) 6)
+      'equal
+      'different)
+
+  (if '()
+      'the-list-has-stuff
+      'the-list-is-empty)
+
+  (if '(1)
+      'the-list-has-stuff
+      'the-list-is-empty)
+
+  (if (evenp 4)
+      'true
+      'false)
+
+  (if (oddp 4)
+      'odd
+      'even)
+
+  (if (oddp 5) 'true (/ 1 0)))
+
+
