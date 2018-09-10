@@ -58,4 +58,25 @@
     (setf *number-is-odd* t)
     'odd-number))
 
+(defparameter *arch-enemy* nil)
+(defun pudding-eater (person)
+  (cond ((eq person 'henry) (setf *arch-enemy* 'lisp-alien)
+	 '(curse your lisp alien - you ate my pudding))
+
+	((eq person 'johnny) (setf *arch-enemy* 'old-johnny)
+	 '(i hope ypu chocked on my pudding johnny))
+
+	(t (setf *arch-enemy* person)
+	   '(why you eat my pudding stranger))))
+
+
+(defparameter *a* 0)
+(defun test-cond (number)
+  (cond ((> number 1) (setf *a* number) (princ "Greater than One"))
+	((< number 1) (setf *a* number) (princ "Smaller than One"))
+	(t (setf *a* number) (princ "Equal to One"))))
+
+
+
+
 
