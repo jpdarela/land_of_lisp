@@ -67,8 +67,7 @@
 	 '(i hope ypu chocked on my pudding johnny))
 
 	(t (setf *arch-enemy* person)
-	   '(why you eat my pudding stranger))))
-
+ 	   '(why you eat my pudding stranger))))
 
 (defparameter *a* 0)
 (defun test-cond (number)
