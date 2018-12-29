@@ -78,33 +78,13 @@
   (cons 'items- (objects-at 'body *objects* *object-locations*)))
 
 ;; GAME REPL
-(defun say-hello_awful()
-  (print "Please type your name: ")
-  (let ((name (read)))
-    (print "Nice to meet you ")
-    (prin1 name)))
-
-
-;; read function in smart for objects types
-(defun add-five()
-  (print "Please, type a number:")
-  (let ((num (read)))
-    (print "When I add 5 I get:")
-    (prin1 (+ 5  num))))
-
-
-(defun say-hello()
-  (princ "Please, type your name: ")
-  (let ((name (read-line)))
-    (princ "Nice to meet you, ")
-    (princ name)))
-
 
 (defun game-repl()
   (let ((cmd (game-read)))
     (unless (eq (car cmd) 'quit)
       (game-print(game-eval cmd))
       (game-repl))))
+
 
 (defun game-read ()
   (let ((cmd (read-from-string
@@ -132,12 +112,13 @@
 	  ((or caps lit) (cons (char-upcase item) (tweak-text rest nil lit)))
 	  (t (cons (char-downcase item) (tweak-text rest nil nil)))))))
 
+
 (defun game-print(lst)
-  (princ (coerce (tweak-text (coerce (string-trim "() "
-						  (prin1-to-string lst))
-				     'list)
-			     t
-			     nil)
+  (princ (coerce (tweak-text(coerce (string-trim "() "
+						 (prin1-to-string lst))
+				    'list)
+			    t
+			    nil)
 		 'string))
   (fresh-line))
 
