@@ -1,5 +1,6 @@
 (defparameter *wizard-nodes* '((living-room (you are in the living room.
 					     a wizard is snoring loud on the couch.))
+
 			       (garden (you are in the beaultful garden.
 					there is a well in front of you.))
 			       (attic (you are in tthe attic. there is
@@ -96,3 +97,4 @@
 
 (defun ugraph->png (fname nodes edges)
   (dot->png fname (lambda () (ugraph->dot nodes edges))))
+
