@@ -22,7 +22,7 @@
 
 (defun make-edge-list ()
   (apply #'append (loop repeat *edge-num*
-		      collect (edge-pair (random-node)(random-node)))))
+		     collect (edge-pair (random-node)(random-node)))))
 
 
 (defun direct-edges (node edge-list)
